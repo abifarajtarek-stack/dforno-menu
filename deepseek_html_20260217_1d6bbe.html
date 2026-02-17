@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D'FORNO Menu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f5f0;
+            margin: 0;
+            padding: 20px;
+            color: #2c1810;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #8b4513;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .restaurant-name {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .tagline {
+            font-size: 24px;
+            font-style: italic;
+            color: #ffd700;
+        }
+        
+        /* THIS IS WHERE YOUR FOOD PHOTO GOES! */
+        .food-showcase {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .food-showcase img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid #8b4513;
+        }
+        .food-caption {
+            margin-top: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            background: #2c1810;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .menu-column {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #8b4513;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0d6c0;
+        }
+        .item-price {
+            color: #8b4513;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="restaurant-name">D'FORNO</div>
+        <div class="tagline">Italian Fire x Lebanese Soul</div>
+        <div>Artisan Pizza · Lebanese Bites · Fresh Salads</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- YOUR FOOD PHOTO SHOWCASE - BOTH PHOTOS HERE! -->
+    <!-- ============================================ -->
+    <div class="food-showcase">
+        <!-- This img tag displays your combined food photo -->
+        <img src="dforno_combined_photos.png" alt="D'FORNO Signature Dishes - Pizza and Lebanese Bites">
+        <div class="food-caption">Our signature dishes - Freshly prepared daily!</div>
+    </div>
+
+    <div class="contact-info">
+        <p>📞 +961 81 222 498</p>
+        <p>📍 Ainab, Lebanon</p>
+    </div>
+
+    <div class="menu-container">
+        <!-- Column 1 -->
+        <div class="menu-column">
+            <h2>SIGNATURE SANDWICHES</h2>
+            <div class="menu-item"><span>Chicken & Cheese</span><span class="item-price">$5.50</span></div>
+            <div class="menu-item"><span>Chicken Avocado</span><span class="item-price">$6.00</span></div>
+            <div class="menu-item"><span>Chicken Caesar</span><span class="item-price">$6.50</span></div>
+            <div class="menu-item"><span>Chicken Pesto</span><span class="item-price">$6.50</span></div>
+            <div class="menu-item"><span>Crab Melt</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Chicken Fajita</span><span class="item-price">$6.00</span></div>
+            <div class="menu-item"><span>Halloumi Pesto</span><span class="item-price">$5.00</span></div>
+            <div class="menu-item"><span>Turkey & Cheese</span><span class="item-price">$5.00</span></div>
+            <div class="menu-item"><span>Rosto</span><span class="item-price">$5.00</span></div>
+            <div class="menu-item"><span>Tuna Melt</span><span class="item-price">$5.00</span></div>
+
+            <h2>BITES & SHAREABLES</h2>
+            <div class="menu-item"><span>Chicken Caesar Bites</span><span class="item-price">$7.50</span></div>
+            <div class="menu-item"><span>Halloumi Pesto Bites</span><span class="item-price">$6.50</span></div>
+            <div class="menu-item"><span>Tuna Bites</span><span class="item-price">$6.50</span></div>
+            <div class="menu-item"><span>Rosto Bites</span><span class="item-price">$5.50</span></div>
+            <div class="menu-item"><span>Kashkawan Bites</span><span class="item-price">$5.00</span></div>
+
+            <h2>MO3AJANET</h2>
+            <div class="menu-item"><span>Cheese Pizza</span><span class="item-price">$5.00</span></div>
+            <div class="menu-item"><span>Hotdog</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Jebneh</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Lahmeh</span><span class="item-price">$5.00</span></div>
+            <div class="menu-item"><span>Spinach (Sbenikh)</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Kechek</span><span class="item-price">$3.00</span></div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="menu-column">
+            <h2>SIGNATURE PIZZAS</h2>
+            <div class="menu-item"><span>Truffle Pizza</span><span class="item-price">$15.00</span></div>
+            <div class="menu-item"><span>BBQ Chicken Pizza</span><span class="item-price">$12.00</span></div>
+            <div class="menu-item"><span>Four Cheese Pizza</span><span class="item-price">$12.00</span></div>
+            <div class="menu-item"><span>Chicken Alfredo Pizza</span><span class="item-price">$15.00</span></div>
+            <div class="menu-item"><span>Lebanese Pizza</span><span class="item-price">$13.00</span></div>
+            <div class="menu-item"><span>Margherita Pizza</span><span class="item-price">$10.00</span></div>
+            <div class="menu-item"><span>Margherita (Fresh Mozz)</span><span class="item-price">$13.00</span></div>
+            <div class="menu-item"><span>Pepperoni Pizza</span><span class="item-price">$11.00</span></div>
+            <div class="menu-item"><span>Veggie Pizza</span><span class="item-price">$11.50</span></div>
+            <div class="menu-item"><span>Fajita Pizza</span><span class="item-price">$14.00</span></div>
+
+            <h2>MAA'KISH</h2>
+            <div class="menu-item"><span>Jehne</span><span class="item-price">$2.50</span></div>
+            <div class="menu-item"><span>Jehne & Habach</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Jehne & Lahme</span><span class="item-price">$2.50</span></div>
+            <div class="menu-item"><span>Jehne & Pepperoni</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Jehne & Sujuk</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Jehne & Zaatar</span><span class="item-price">$2.00</span></div>
+            <div class="menu-item"><span>Kafta & Jehne</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Keshik</span><span class="item-price">$2.00</span></div>
+            <div class="menu-item"><span>Labne</span><span class="item-price">$2.00</span></div>
+            <div class="menu-item"><span>Lahme</span><span class="item-price">$2.60</span></div>
+            <div class="menu-item"><span>Sbenish</span><span class="item-price">$1.50</span></div>
+            <div class="menu-item"><span>Zaatar</span><span class="item-price">$0.80</span></div>
+
+            <h2>KAAK</h2>
+            <div class="menu-item"><span>Seda</span><span class="item-price">$1.00</span></div>
+            <div class="menu-item"><span>Jehne & Chocolate</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Jehne & Pepperoni</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Picon</span><span class="item-price">$2.50</span></div>
+
+            <h2>FRESH SALADS</h2>
+            <div class="menu-item"><span>Chicken Caesar Salad</span><span class="item-price">$7.00</span></div>
+            <div class="menu-item"><span>Crab Salad</span><span class="item-price">$8.00</span></div>
+            <div class="menu-item"><span>Greek Salad</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Chicken Pesto Pasta</span><span class="item-price">$8.00</span></div>
+            <div class="menu-item"><span>Qumoa Halloumi</span><span class="item-price">$8.00</span></div>
+            <div class="menu-item"><span>Tuna Salad</span><span class="item-price">$6.00</span></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Fresh. Bold. Loaded.</p>
+        <p>D'FORNO - Where Italian fire meets Lebanese flavor!</p>
+    </div>
+</body>
+</html>
