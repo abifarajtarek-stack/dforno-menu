@@ -5,31 +5,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; background: #f8f5f0; margin: 0; padding: 20px; }
-        .header { text-align: center; padding: 20px; background: #8b4513; color: white; border-radius: 10px; }
-        .restaurant-name { font-size: 48px; font-weight: bold; }
-        .food-showcase { text-align: center; margin: 30px 0; padding: 20px; background: white; border-radius: 10px; }
-        .food-showcase img { max-width: 100%; border-radius: 8px; border: 3px solid #8b4513; }
-        .contact-info { background: #2c1810; color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; }
-        .menu-container { display: flex; flex-wrap: wrap; gap: 20px; }
-        .menu-column { flex: 1; min-width: 300px; background: white; padding: 20px; border-radius: 10px; }
-        h2 { color: #8b4513; border-bottom: 2px solid #ffd700; }
-        .menu-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #e0d6c0; }
-        .item-price { color: #8b4513; font-weight: bold; }
-        .footer { text-align: center; margin-top: 30px; padding: 20px; color: #666; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f5f0;
+            margin: 0;
+            padding: 20px;
+            color: #2c1810;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #8b4513;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .restaurant-name {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .tagline {
+            font-size: 24px;
+            font-style: italic;
+            color: #ffd700;
+        }
+        
+        /* ========== NEW: TWO IMAGES SIDE BY SIDE ========== */
+        .gallery {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .gallery-item {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid #8b4513;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.02);  /* Slight zoom on hover */
+        }
+        
+        .gallery-caption {
+            margin-top: 10px;
+            color: #666;
+            font-style: italic;
+            font-weight: bold;
+        }
+        /* ================================================== */
+        
+        .contact-info {
+            background: #2c1810;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .menu-column {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #8b4513;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0d6c0;
+        }
+        .item-price {
+            color: #8b4513;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .gallery-item {
+                min-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="restaurant-name">D'FORNO</div>
-        <div>Italian Fire x Lebanese Soul</div>
+        <div class="tagline">Italian Fire x Lebanese Soul</div>
         <div>Artisan Pizza · Lebanese Bites · Fresh Salads</div>
     </div>
 
-    <!-- FOOD PHOTO SECTION - USING CORRECT PATH -->
-    <div class="food-showcase">
-        <img src="dforno_combined_photos.png" alt="D'FORNO Signature Dishes">
-        <div>Our signature dishes - Freshly prepared daily!</div>
+    <!-- ================================================= -->
+    <!-- TWO HIGH-QUALITY FOOD PHOTOS - SIDE BY SIDE       -->
+    <!-- ================================================= -->
+    <div class="gallery">
+        <!-- First Food Photo -->
+        <div class="gallery-item">
+            <img src="food_photo_1.png" alt="D'FORNO Signature Pizza and Dishes">
+            <div class="gallery-caption">Artisan Pizzas & Signature Dishes</div>
+        </div>
+        
+        <!-- Second Food Photo -->
+        <div class="gallery-item">
+            <img src="food_photo_2.png" alt="D'FORNO Lebanese Bites and Fresh Salads">
+            <div class="gallery-caption">Lebanese Bites & Fresh Salads</div>
+        </div>
     </div>
 
     <div class="contact-info">
