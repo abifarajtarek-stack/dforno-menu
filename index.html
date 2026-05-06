@@ -1,206 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>D'FORNO Menu</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>D'FORNO | Pizza · Sandwiches · Lebanese Soul</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f5f0;
+        * {
             margin: 0;
-            padding: 20px;
-            color: #2c1810;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        /* ========== LOGO/BRANDING SECTION - NOW AT THE TOP! ========== */
+
+        body {
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            background: #fef7e8;
+            background-image: radial-gradient(circle at 15% 40%, rgba(245, 176, 66, 0.05) 2px, transparent 2px);
+            background-size: 32px 32px;
+            margin: 0;
+            padding: 28px 22px;
+            color: #29180f;
+        }
+
+        /* branding & card style */
         .branding-header {
             text-align: center;
-            margin-bottom: 30px;
             background: white;
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 28px 20px 24px;
+            border-radius: 40px;
+            margin-bottom: 34px;
+            box-shadow: 0 16px 30px -12px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s;
         }
-        
+
         .branding-header img {
             max-width: 100%;
             height: auto;
-            max-height: 300px;  /* Limits height but keeps quality */
-            border-radius: 10px;
+            max-height: 260px;
+            border-radius: 28px;
+            object-fit: contain;
             margin-bottom: 20px;
         }
-        
-        .branding-text {
-            color: #8b4513;
-        }
-        
+
         .branding-text h1 {
-            font-size: 48px;
-            margin: 10px 0;
-            color: #8b4513;
-            font-weight: bold;
+            font-size: 56px;
+            background: linear-gradient(135deg, #b45a2b, #5e2a0f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin: 6px 0;
         }
-        
+
         .branding-text .tagline {
-            font-size: 24px;
-            color: #666;
+            font-size: 22px;
+            font-weight: 500;
+            color: #b45a2b;
             font-style: italic;
-            margin: 10px 0;
         }
-        
+
         .branding-text .subtitle {
-            font-size: 18px;
-            color: #8b4513;
-            border-top: 2px solid #ffd700;
-            border-bottom: 2px solid #ffd700;
-            padding: 10px 0;
+            background: #f7e9db;
             display: inline-block;
+            padding: 6px 24px;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #8b421a;
+            margin-top: 12px;
+            font-size: 1rem;
         }
-        /* ============================================================= */
-    
+
         .contact-info {
             background: #2c1810;
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 30px 0;
-            text-align: center;
-            font-size: 18px;
-        }
-        
-        .menu-container {
+            color: #ffefcf;
+            padding: 14px 20px;
+            border-radius: 80px;
+            margin: 20px 0 36px;
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            justify-content: center;
+            gap: 28px;
+            font-weight: 500;
+            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
         }
-        
-        .menu-column {
+
+        /* menu columns */
+        .two-col-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 32px;
+            padding: 28px 26px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05);
             flex: 1;
             min-width: 300px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.2s;
         }
-        
+
         h2 {
-            color: #8b4513;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 10px;
+            color: #9b4b1c;
+            border-left: 6px solid #f5b042;
+            padding-left: 18px;
+            margin-bottom: 22px;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
         }
-        
+
+        .section-divider {
+            margin-top: 32px;
+            margin-bottom: 20px;
+            border-top: 2px dotted #f2e0ce;
+        }
+
         .menu-item {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px dashed #e0d6c0;
+            align-items: baseline;
+            padding: 11px 0;
+            border-bottom: 1px dashed #efdfce;
+            font-size: 1rem;
         }
-        
+
         .item-price {
-            color: #8b4513;
-            font-weight: bold;
+            color: #b45a2b;
+            font-weight: 700;
+            background: #fef3e8;
+            padding: 3px 12px;
+            border-radius: 40px;
+            margin-left: 14px;
+            white-space: nowrap;
+            font-size: 0.9rem;
         }
-        
+
+        .rest-header {
+            text-align: center;
+            margin: 32px 0 28px;
+            position: relative;
+        }
+
+        .rest-header span {
+            background: #fff3e6;
+            padding: 8px 34px;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #a34e1a;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+            box-shadow: inset 0 1px 2px #fff8, 0 6px 12px rgba(0, 0, 0, 0.02);
+        }
+
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            color: #666;
-            font-style: italic;
-            border-top: 1px solid #e0d6c0;
+            margin-top: 48px;
+            padding: 28px 20px;
+            background: #fef3e6;
+            border-radius: 48px;
+            color: #4f2a12;
+            font-weight: 500;
         }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .branding-header img {
-                max-height: 200px;
+
+        @media (max-width: 700px) {
+            body {
+                padding: 16px;
+            }
+            .branding-text h1 {
+                font-size: 40px;
+            }
+            .menu-card {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ================================================= -->
-    <!-- YOUR LOGO/BRANDING IMAGE - NOW FIRST!             -->
-    <!-- ================================================= -->
+
+    <!-- ========== LOGO & BRANDING (TOP) ========== -->
     <div class="branding-header">
-        <!-- Your beautiful D'FORNO logo/image -->
-        <img src="dforno_logo.png" alt="D'FORNO - Italian Fire x Lebanese Soul">
-        
+        <img src="dforno_logo.png" alt="D'FORNO - Italian Fire meets Lebanese Soul">
         <div class="branding-text">
             <h1>D'FORNO</h1>
             <div class="tagline">Italian Fire x Lebanese Soul</div>
-            <div class="subtitle">Artisan Pizza · Lebanese Bites · Fresh Salads</div>
+            <div class="subtitle">Artisan Pizza · Gourmet Sandwiches · Lebanese Bites</div>
         </div>
     </div>
 
-    <!-- Contact Information -->
     <div class="contact-info">
         <p>📞 +961 81 222 498</p>
         <p>📍 Ainab, Lebanon</p>
+        <p>🔥 Open Daily: 11am – 11pm</p>
     </div>
 
-    <!-- MENU SECTION - TWO COLUMNS -->
-    <div class="menu-container">
-        <!-- COLUMN 1 - SANDWICHES, BITES, MO3AJANET -->
-        <div class="menu-column">
-            <h2>SIGNATURE SANDWICHES - Gourmet Sandwiches
-Freshly prepared & full of flavor</h2>
-            <div class="menu-item"><span>Chicken & Cheese</span><span class="item-price">$5.50</span></div>
-            <div class="menu-item"><span>Chicken Avocado</span><span class="item-price">$6.00</span></div>
-            <div class="menu-item"><span>Chicken Caesar</span><span class="item-price">$6.50</span></div>
-            <div class="menu-item"><span>Chicken Pesto</span><span class="item-price">$6.50</span></div>
-            <div class="menu-item"><span>Crab Sandwich</span><span class="item-price">$4.50</span></div>
-            <div class="menu-item"><span>Chicken Fajita</span><span class="item-price">$6.00</span></div>
-            <div class="menu-item"><span>Halloumi Pesto</span><span class="item-price">$5.00</span></div>
-            <div class="menu-item"><span>Turkey & Cheese</span><span class="item-price">$5.00</span></div>
-            <div class="menu-item"><span>Special Chocolate</span><span class="item-price">$2.50</span></div>
-            <div class="menu-item"><span>Kashkawan</span><span class="item-price">$3.00</span></div>
-            <div class="menu-item"><span>Tuna Sandwich</span><span class="item-price">$5.00</span></div>
-
-            <h2>BITES & SHAREABLES</h2>
-            <div class="menu-item"><span>Chicken Caesar Bites</span><span class="item-price">$7.50</span></div>
-            <div class="menu-item"><span>Halloumi Pesto Bites</span><span class="item-price">$6.50</span></div>
-            <div class="menu-item"><span>Tuna Bites</span><span class="item-price">$6.50</span></div>
-            <div class="menu-item"><span>Kashkawan Bites</span><span class="item-price">$5.00</span></div>
-
-            <h2>MO3AJANET</h2>
-            <div class="menu-item"><span>Cheese Pizza</span><span class="item-price">$5.00</span></div>
-            <div class="menu-item"><span>Hotdog</span><span class="item-price">$4.00</span></div>
-            <div class="menu-item"><span>Jebneh</span><span class="item-price">$4.50</span></div>
-            <div class="menu-item"><span>Lahmeh</span><span class="item-price">$6.00</span></div>
-            <div class="menu-item"><span>Spinach (Sbenikh)</span><span class="item-price">$4.00</span></div>
-            <div class="menu-item"><span>Kechek</span><span class="item-price">$3.00</span></div>
-            <div class="menu-item"><span>Zaatar</span><span class="item-price">$3.00</span></div>
-
-            <h2>MOSHTAH</h2>
-            <div class="menu-item"><span>Jebne</span><span class="item-price">$3.00</span></div>
-            <div class="menu-item"><span>Jebne & Lahme</span><span class="item-price">$4.00</span></div>
-            <div class="menu-item"><span>Jebneh & Pepperoni</span><span class="item-price">$4.00</span></div>
-            <div class="menu-item"><span>Turkey & Cheese</span><span class="item-price">$4.50</span></div>
-            <div class="menu-item"><span>Jebne & Zaatar</span><span class="item-price">$2.50</span></div>
-            <div class="menu-item"><span>Jebne & Harra</span><span class="item-price">$3.50</span></div>
-            <div class="menu-item"><span>Seda</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Zaatar</span><span class="item-price">$1.50</span></div>
-
-             <h2>Bevrage</h2>
-            <div class="menu-item"><span>Pepsi</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Diet Pepsi</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>7UP</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Diet 7UP</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Maranda</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Liban</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Gatorade</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Water</span><span class="item-price">$0.44</span></div>
-            <div class="menu-item"><span>Lipton Ice Tea</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>evervess</span><span class="item-price">$0.70</span></div>
-            
-            
-        </div>
-
-        <!-- COLUMN 2 - PIZZAS, MAA'KISH, KAAK, SALADS -->
-        <div class="menu-column">
-            <h2>SIGNATURE PIZZAS</h2>
+    <!-- ========== 1st SECTION: PIZZA LARGE + PIZZA MEDIUM ========== -->
+    <div class="two-col-grid">
+        <!-- LEFT: LARGE PIZZAS -->
+        <div class="menu-card">
+            <h2>🍕 SIGNATURE LARGE PIZZAS<br><span style="font-size: 0.85rem; font-weight: normal;">Stone-baked · Italian fire</span></h2>
             <div class="menu-item"><span>Truffle Pizza</span><span class="item-price">$16.00</span></div>
             <div class="menu-item"><span>BBQ Chicken Pizza</span><span class="item-price">$13.00</span></div>
             <div class="menu-item"><span>Four Cheese Pizza</span><span class="item-price">$13.00</span></div>
@@ -211,8 +214,11 @@ Freshly prepared & full of flavor</h2>
             <div class="menu-item"><span>Pepperoni Pizza</span><span class="item-price">$12.00</span></div>
             <div class="menu-item"><span>Veggie Pizza</span><span class="item-price">$12.50</span></div>
             <div class="menu-item"><span>Fajita Pizza</span><span class="item-price">$15.00</span></div>
+        </div>
 
-            <h2>SIGNATURE PIZZAS MEDIUM</h2>
+        <!-- RIGHT: MEDIUM PIZZAS -->
+        <div class="menu-card">
+            <h2>🍕 MEDIUM PIZZAS<br><span style="font-size: 0.85rem; font-weight: normal;">Perfect for sharing</span></h2>
             <div class="menu-item"><span>Truffle Pizza Medium</span><span class="item-price">$14.00</span></div>
             <div class="menu-item"><span>BBQ Chicken Pizza Medium</span><span class="item-price">$11.00</span></div>
             <div class="menu-item"><span>Four Cheese Pizza Medium</span><span class="item-price">$11.00</span></div>
@@ -223,54 +229,141 @@ Freshly prepared & full of flavor</h2>
             <div class="menu-item"><span>Pepperoni Pizza Medium</span><span class="item-price">$10.00</span></div>
             <div class="menu-item"><span>Veggie Pizza Medium</span><span class="item-price">$10.50</span></div>
             <div class="menu-item"><span>Fajita Pizza Medium</span><span class="item-price">$13.00</span></div>
-            
-            <h2>Manakish</h2>
-            <div class="menu-item"><span>Jebne</span><span class="item-price">$2.50</span></div>
-            <div class="menu-item"><span>Jebne & Habach</span><span class="item-price">$3.90</span></div>
-            <div class="menu-item"><span>Jebne & Lahme</span><span class="item-price">$3.90</span></div>
-            <div class="menu-item"><span>Jebne & Pepperoni</span><span class="item-price">$3.90</span></div>
-            <div class="menu-item"><span>Jebne & Sujuk</span><span class="item-price">$4.50</span></div>
-            <div class="menu-item"><span>Jebne & Zaatar</span><span class="item-price">$2.00</span></div>
-            <div class="menu-item"><span>Jebne & Harra</span><span class="item-price">$3.00</span></div>
-            <div class="menu-item"><span>Kafta & Jebne</span><span class="item-price">$4.50</span></div>
-            <div class="menu-item"><span>Kafta</span><span class="item-price">$2.70</span></div>
-            <div class="menu-item"><span>Sbenikh w jebne</span><span class="item-price">$2.00</span></div>
-            <div class="menu-item"><span>Sojok</span><span class="item-price">$2.70</span></div>
-            <div class="menu-item"><span>Keshek w jebne</span><span class="item-price">$3.00</span></div>            
-            <div class="menu-item"><span>Keshek</span><span class="item-price">$1.70</span></div>
-            <div class="menu-item"><span>Labne</span><span class="item-price">$3.00</span></div>
-            <div class="menu-item"><span>Lahme</span><span class="item-price">$2.80</span></div>
-            <div class="menu-item"><span>Sbenikh</span><span class="item-price">$1.50</span></div>
-            <div class="menu-item"><span>Zaatar</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Tomato and Onion</span><span class="item-price">$1.70</span></div>
-            <div class="menu-item"><span>Jebne, Tomato and Onion</span><span class="item-price">$2.90</span></div>
-            <div class="menu-item"><span>Aajine</span><span class="item-price">$0.55</span></div>
-            <div class="menu-item"><span>Mashrouha</span><span class="item-price">$1.20</span></div>
-            
-            <h2>KAAK</h2>
-            <div class="menu-item"><span>Jebne</span><span class="item-price">$3.00</span></div>
-            <div class="menu-item"><span>Jebne & Chocolate</span><span class="item-price">$4.00</span></div>
-            <div class="menu-item"><span>Jebne & Pepperoni</span><span class="item-price">$4.60</span></div>
-            <div class="menu-item"><span>Picon</span><span class="item-price">$2.00</span></div>
-            <div class="menu-item"><span>Turkey & Cheese</span><span class="item-price">$4.60</span></div>
-            <div class="menu-item"><span>Seda</span><span class="item-price">$1.00</span></div>
-            <div class="menu-item"><span>Halloumi pesto</span><span class="item-price">$5.00</span></div>
+        </div>
+    </div>
 
-            <h2>FRESH SALADS</h2>
+    <!-- ========== 2nd SECTION: SANDWICHES (ALL SIGNATURE SANDWICHES) ========== -->
+    <div class="two-col-grid">
+        <div class="menu-card" style="width: 100%;">
+            <h2>🥙 SIGNATURE SANDWICHES — Gourmet & Freshly Crafted</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0 20px;">
+                <div class="menu-item"><span>Chicken & Cheese</span><span class="item-price">$5.50</span></div>
+                <div class="menu-item"><span>Chicken Avocado</span><span class="item-price">$6.00</span></div>
+                <div class="menu-item"><span>Chicken Caesar</span><span class="item-price">$6.50</span></div>
+                <div class="menu-item"><span>Chicken Pesto</span><span class="item-price">$6.50</span></div>
+                <div class="menu-item"><span>Crab Sandwich</span><span class="item-price">$4.50</span></div>
+                <div class="menu-item"><span>Chicken Fajita</span><span class="item-price">$6.00</span></div>
+                <div class="menu-item"><span>Halloumi Pesto</span><span class="item-price">$5.00</span></div>
+                <div class="menu-item"><span>Turkey & Cheese</span><span class="item-price">$5.00</span></div>
+                <div class="menu-item"><span>Special Chocolate</span><span class="item-price">$2.50</span></div>
+                <div class="menu-item"><span>Kashkawan</span><span class="item-price">$3.00</span></div>
+                <div class="menu-item"><span>Tuna Sandwich</span><span class="item-price">$5.00</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE REST OF THE MENU (EVERYTHING ELSE) ========== -->
+    <div class="rest-header">
+        <span>🍽️ More Delights — Bites · Manakish · Salads · Classics</span>
+    </div>
+
+    <div class="two-col-grid">
+        <!-- LEFT COLUMN : BITES + MO3AJANET + MOSHTAH + CHEESE PIZZA (individual) + SALADS -->
+        <div class="menu-card">
+            <h2>🍗 BITES & SHAREABLES</h2>
+            <div class="menu-item"><span>Chicken Caesar Bites</span><span class="item-price">$7.50</span></div>
+            <div class="menu-item"><span>Halloumi Pesto Bites</span><span class="item-price">$6.50</span></div>
+            <div class="menu-item"><span>Tuna Bites</span><span class="item-price">$6.50</span></div>
+            <div class="menu-item"><span>Kashkawan Bites</span><span class="item-price">$5.00</span></div>
+
+            <div class="section-divider"></div>
+            <h2>🥙 MO3AJANET (Lebanese Pastries)</h2>
+            <div class="menu-item"><span>Hotdog</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Jebneh</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Lahmeh</span><span class="item-price">$6.00</span></div>
+            <div class="menu-item"><span>Spinach (Sbenikh)</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Kechek</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Zaatar</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Cheese Pizza (individual)</span><span class="item-price">$5.00</span></div>
+
+            <div class="section-divider"></div>
+            <h2>🧀 MOSHTAH (Fresh Rolls)</h2>
+            <div class="menu-item"><span>Jebne</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Jebne & Lahme</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Jebneh & Pepperoni</span><span class="item-price">$5.00</span></div>
+            <div class="menu-item"><span>Turkey & Cheese</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Jebne & Zaatar</span><span class="item-price">$2.50</span></div>
+            <div class="menu-item"><span>Jebne & Harra</span><span class="item-price">$3.50</span></div>
+            <div class="menu-item"><span>Seda</span><span class="item-price">$1.00</span></div>
+            <div class="menu-item"><span>Zaatar</span><span class="item-price">$1.50</span></div>
+
+            <div class="section-divider"></div>
+            <h2>🥗 FRESH SALADS & BOWLS</h2>
             <div class="menu-item"><span>Chicken Caesar Salad</span><span class="item-price">$7.00</span></div>
             <div class="menu-item"><span>Crab Salad</span><span class="item-price">$8.00</span></div>
             <div class="menu-item"><span>Greek Salad</span><span class="item-price">$5.00</span></div>
             <div class="menu-item"><span>Chicken Pesto Pasta</span><span class="item-price">$8.00</span></div>
             <div class="menu-item"><span>Quinoa Halloumi</span><span class="item-price">$8.00</span></div>
             <div class="menu-item"><span>Tuna Salad</span><span class="item-price">$6.00</span></div>
+        </div>
 
-            
+        <!-- RIGHT COLUMN : MANAKISH + KAAK + (extra small items) -->
+        <div class="menu-card">
+            <h2>🔥 MANAKISH (Fresh from Taboon)</h2>
+            <div class="menu-item"><span>Jebne</span><span class="item-price">$2.50</span></div>
+            <div class="menu-item"><span>Jebne & Habach</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Jebne & Lahme</span><span class="item-price">$3.90</span></div>
+            <div class="menu-item"><span>Jebne & Pepperoni</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Jebne & Sujuk</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Jebne & Zaatar</span><span class="item-price">$2.00</span></div>
+            <div class="menu-item"><span>Jebne & Harra</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Kafta & Jebne</span><span class="item-price">$4.50</span></div>
+            <div class="menu-item"><span>Kafta</span><span class="item-price">$3.50</span></div>
+            <div class="menu-item"><span>Sbenikh w jebne</span><span class="item-price">$2.00</span></div>
+            <div class="menu-item"><span>Sojok</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Keshek w jebne</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Keshek</span><span class="item-price">$2.00</span></div>
+            <div class="menu-item"><span>Labne</span><span class="item-price">$3.00</span></div>
+            <div class="menu-item"><span>Lahme</span><span class="item-price">$2.80</span></div>
+            <div class="menu-item"><span>Sbenikh</span><span class="item-price">$1.50</span></div>
+            <div class="menu-item"><span>Zaatar</span><span class="item-price">$1.00</span></div>
+            <div class="menu-item"><span>Aajine</span><span class="item-price">$0.55</span></div>
+
+            <div class="section-divider"></div>
+            <h2>🥖 KAAK (Street-style Rings)</h2>
+            <div class="menu-item"><span>Jebne</span><span class="item-price">$3.33</span></div>
+            <div class="menu-item"><span>Jebne & Chocolate</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Jebne & Pepperoni</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Picon</span><span class="item-price">$2.50</span></div>
+            <div class="menu-item"><span>Turkey & Cheese</span><span class="item-price">$4.00</span></div>
+            <div class="menu-item"><span>Seda</span><span class="item-price">$1.00</span></div>
+            <div class="menu-item"><span>Halloumi pesto</span><span class="item-price">$5.00</span></div>
+        </div>
+    </div>
+
+    <!-- ========== BEVERAGES SECTION (LAST) with NEW plastic & juice box items ========== -->
+    <div class="rest-header" style="margin-top: 10px;">
+        <span>🥤 THIRST QUENCHERS — Beverages</span>
+    </div>
+
+    <div class="two-col-grid">
+        <div class="menu-card" style="width: 100%;">
+            <h2>Cold Drinks & Refreshments</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0 24px;">
+                <div class="menu-item"><span>Pepsi (Can)</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>Diet Pepsi (Can)</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>7UP</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>Diet 7UP</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>Maranda (Can)</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>Liban</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>Gatorade</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>Water (Small)</span><span class="item-price">$0.44</span></div>
+                <div class="menu-item"><span>Lipton Ice Tea</span><span class="item-price">$1.00</span></div>
+                <div class="menu-item"><span>Evervess</span><span class="item-price">$0.70</span></div>
+                <!-- NEW ADDITIONS: Plastic bottles + Juice Box -->
+                <div class="menu-item"><span>🥤 Pepsi (Plastic Bottle)</span><span class="item-price">$0.70</span></div>
+                <div class="menu-item"><span>🥤 Diet Pepsi (Plastic Bottle)</span><span class="item-price">$0.70</span></div>
+                <div class="menu-item"><span>🍊 Maranda (Plastic Bottle)</span><span class="item-price">$0.70</span></div>
+                <div class="menu-item"><span>🧃 Juice Box (Mixed Flavors)</span><span class="item-price">$0.50</span></div>
+            </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>Fresh. Bold. Loaded.</p>
-        <p>D'FORNO - Where Italian fire meets Lebanese flavor!</p>
+        <p>🔥 Fresh. Bold. Loaded. — Italian Fire meets Lebanese Soul 🔥</p>
+        <p>📍 D'FORNO — Ainab, Lebanon | 📞 +961 81 222 498</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">*All prices in USD. Enjoy our pizza, sandwiches & authentic flavors!</p>
     </div>
+
 </body>
 </html>
